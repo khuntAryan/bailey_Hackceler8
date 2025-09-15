@@ -1,0 +1,29 @@
+{
+    "browser": {
+      "debug_port": 9222,
+      "profile_paths": {
+        "mac": "~/Library/Application Support/BraveSoftware/Brave-Browser",
+        "windows": "~/AppData/Local/BraveSoftware/Brave-Browser/User Data",
+        "linux": "~/.config/BraveSoftware/Brave-Browser"
+      },
+      "binary_paths": {
+        "mac": "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
+        "windows": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+        "linux": "/usr/bin/brave-browser"
+      }
+    },
+    "urls": {
+      "prompt_enhancer": "https://www.maxai.co/ai-tools/ai-writer/prompt-enhancement/",
+      "perplexity": "https://perplexity.ai"
+    },
+    "timeouts": {
+      "page_load": 15,
+      "element_wait": 10,
+      "response_wait": 30
+    },
+    "project": {
+      "output_directory": "~/Desktop",
+      "project_prefix": "AI_Generated_"
+    }
+  }
+  

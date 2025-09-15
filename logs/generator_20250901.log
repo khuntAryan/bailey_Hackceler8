@@ -1,0 +1,16 @@
+2025-09-01 00:49:09,850 - ai_website_generator - INFO - Launched Brave with user profile (PID: 82642)
+2025-09-01 00:49:16,095 - ai_website_generator - INFO - Connected to Brave browser with user profile
+2025-09-01 00:50:29,570 - ai_website_generator - INFO - Prompt enhancement completed via FlexOS
+2025-09-01 00:51:16,882 - ai_website_generator - ERROR - Tab cleanup failed: HTTPConnectionPool(host='localhost', port=49866): Max retries exceeded with url: /session/92aa607b7fa9ae33931de84b1881b73f/window/handles (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10451f9a0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-01 00:59:03,424 - ai_website_generator - INFO - Launched Brave with user profile (PID: 84646)
+2025-09-01 00:59:09,247 - ai_website_generator - INFO - Connected to Brave browser with user profile
+2025-09-01 01:01:13,415 - ai_website_generator - ERROR - Tab cleanup failed: HTTPConnectionPool(host='localhost', port=56997): Max retries exceeded with url: /session/8a3ddc2fab644eec26f09fe817696c5e/window/handles (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101988f10>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-01 01:05:40,472 - ai_website_generator - INFO - Launched Brave with user profile (PID: 86237)
+2025-09-01 01:05:46,144 - ai_website_generator - INFO - Connected to Brave browser with user profile
+2025-09-01 01:06:59,026 - ai_website_generator - ERROR - Tab cleanup failed: HTTPConnectionPool(host='localhost', port=61892): Max retries exceeded with url: /session/763ef7e1e0eb841b70d3726f92ba3e70/window/handles (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1060f0310>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-01 01:07:18,948 - ai_website_generator - INFO - Launched Brave with user profile (PID: 86701)
+2025-09-01 01:07:24,615 - ai_website_generator - INFO - Connected to Brave browser with user profile
+2025-09-01 01:08:19,546 - ai_website_generator - ERROR - Tab cleanup failed: HTTPConnectionPool(host='localhost', port=63145): Max retries exceeded with url: /session/67eed71d2d4c561f2e4204ef97716c71/window/handles (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1045e55d0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-09-01 20:11:34,336 - ai_website_generator - INFO - Launched Brave with user profile (PID: 2237)
+2025-09-01 20:11:41,078 - ai_website_generator - INFO - Connected to Brave browser with user profile
+2025-09-01 20:12:38,217 - ai_website_generator - ERROR - Tab cleanup failed: HTTPConnectionPool(host='localhost', port=65385): Max retries exceeded with url: /session/dafaf0e200782acefa4e051e02d41fa9/window/handles (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1047a4f10>: Failed to establish a new connection: [Errno 61] Connection refused'))

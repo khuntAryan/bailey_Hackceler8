@@ -1,0 +1,761 @@
+2025-08-31 17:19:47,598 - ai_website_generator - INFO - Launched Brave with user profile (PID: 54950)
+2025-08-31 17:19:55,619 - ai_website_generator - INFO - Connected to Brave browser with user profile
+2025-08-31 17:20:29,078 - ai_website_generator - INFO - Prompt enhancement completed
+2025-08-31 17:20:41,094 - ai_website_generator - WARNING - Element not found: [data-testid*='user'] - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100e2cc20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000100e24b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x000000010096d0c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x00000001009b4618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001009f599c cxxbridge1$string$len + 649852
+5   chromedriver                        0x00000001009a8934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000100def88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000100df2ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000100dd0510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000100df3360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000100dc1610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000100e13230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000100e133bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000100e2476c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:20:43,164 - ai_website_generator - WARNING - Element not found: [data-testid*='profile'] - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100e2cc20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000100e24b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x000000010096d0c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x00000001009b4618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001009f599c cxxbridge1$string$len + 649852
+5   chromedriver                        0x00000001009a8934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000100def88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000100df2ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000100dd0510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000100df3360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000100dc1610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000100e13230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000100e133bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000100e2476c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:20:45,224 - ai_website_generator - WARNING - Element not found: .user-menu - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100e2cc20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000100e24b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x000000010096d0c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x00000001009b4618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001009f599c cxxbridge1$string$len + 649852
+5   chromedriver                        0x00000001009a8934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000100def88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000100df2ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000100dd0510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000100df3360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000100dc1610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000100e13230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000100e133bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000100e2476c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:20:47,283 - ai_website_generator - WARNING - Element not found: .profile-menu - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100e2cc20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000100e24b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x000000010096d0c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x00000001009b4618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001009f599c cxxbridge1$string$len + 649852
+5   chromedriver                        0x00000001009a8934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000100def88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000100df2ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000100dd0510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000100df3360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000100dc1610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000100e13230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000100e133bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000100e2476c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:20:49,346 - ai_website_generator - WARNING - Element not found: .user-avatar - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100e2cc20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000100e24b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x000000010096d0c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x00000001009b4618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001009f599c cxxbridge1$string$len + 649852
+5   chromedriver                        0x00000001009a8934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000100def88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000100df2ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000100dd0510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000100df3360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000100dc1610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000100e13230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000100e133bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000100e2476c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:20:51,416 - ai_website_generator - WARNING - Element not found: button[aria-label*='user' i] - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100e2cc20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000100e24b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x000000010096d0c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x00000001009b4618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001009f599c cxxbridge1$string$len + 649852
+5   chromedriver                        0x00000001009a8934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000100def88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000100df2ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000100dd0510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000100df3360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000100dc1610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000100e13230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000100e133bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000100e2476c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:20:53,489 - ai_website_generator - WARNING - Element not found: button[aria-label*='profile' i] - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100e2cc20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000100e24b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x000000010096d0c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x00000001009b4618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001009f599c cxxbridge1$string$len + 649852
+5   chromedriver                        0x00000001009a8934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000100def88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000100df2ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000100dd0510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000100df3360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000100dc1610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000100e13230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000100e133bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000100e2476c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:20:55,550 - ai_website_generator - WARNING - Element not found: .logged-in - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100e2cc20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000100e24b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x000000010096d0c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x00000001009b4618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001009f599c cxxbridge1$string$len + 649852
+5   chromedriver                        0x00000001009a8934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000100def88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000100df2ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000100dd0510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000100df3360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000100dc1610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000100e13230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000100e133bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000100e2476c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:20:57,629 - ai_website_generator - WARNING - Element not found: .authenticated - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100e2cc20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000100e24b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x000000010096d0c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x00000001009b4618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001009f599c cxxbridge1$string$len + 649852
+5   chromedriver                        0x00000001009a8934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000100def88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000100df2ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000100dd0510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000100df3360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000100dc1610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000100e13230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000100e133bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000100e2476c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:20:59,694 - ai_website_generator - WARNING - Element not found: [data-authenticated='true'] - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100e2cc20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000100e24b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x000000010096d0c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x00000001009b4618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001009f599c cxxbridge1$string$len + 649852
+5   chromedriver                        0x00000001009a8934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000100def88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000100df2ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000100dd0510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000100df3360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000100dc1610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000100e13230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000100e133bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000100e2476c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:21:07,331 - ai_website_generator - ERROR - Tab cleanup failed: HTTPConnectionPool(host='localhost', port=49903): Max retries exceeded with url: /session/e6c9c1e9f7be6d8aa668915ba1ed1795/window/handles (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104403e50>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-08-31 17:25:52,456 - ai_website_generator - INFO - Launched Brave with user profile (PID: 56241)
+2025-08-31 17:25:58,102 - ai_website_generator - INFO - Connected to Brave browser with user profile
+2025-08-31 17:26:48,759 - ai_website_generator - WARNING - Element not found: [data-testid*='user'] - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001010c0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001010b8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000100c010c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000100c48618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000100c8999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000100c3c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x000000010108388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000101086ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000101064510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000101087360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000101055610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001010a7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001010a73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001010b876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:26:50,828 - ai_website_generator - WARNING - Element not found: [data-testid*='profile'] - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001010c0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001010b8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000100c010c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000100c48618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000100c8999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000100c3c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x000000010108388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000101086ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000101064510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000101087360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000101055610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001010a7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001010a73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001010b876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:26:52,902 - ai_website_generator - WARNING - Element not found: .user-menu - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001010c0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001010b8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000100c010c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000100c48618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000100c8999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000100c3c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x000000010108388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000101086ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000101064510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000101087360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000101055610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001010a7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001010a73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001010b876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:26:54,970 - ai_website_generator - WARNING - Element not found: .profile-menu - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001010c0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001010b8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000100c010c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000100c48618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000100c8999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000100c3c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x000000010108388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000101086ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000101064510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000101087360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000101055610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001010a7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001010a73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001010b876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:26:57,040 - ai_website_generator - WARNING - Element not found: .user-avatar - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001010c0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001010b8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000100c010c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000100c48618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000100c8999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000100c3c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x000000010108388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000101086ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000101064510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000101087360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000101055610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001010a7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001010a73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001010b876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:26:59,112 - ai_website_generator - WARNING - Element not found: button[aria-label*='user' i] - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001010c0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001010b8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000100c010c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000100c48618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000100c8999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000100c3c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x000000010108388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000101086ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000101064510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000101087360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000101055610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001010a7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001010a73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001010b876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:27:01,183 - ai_website_generator - WARNING - Element not found: button[aria-label*='profile' i] - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001010c0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001010b8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000100c010c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000100c48618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000100c8999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000100c3c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x000000010108388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000101086ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000101064510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000101087360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000101055610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001010a7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001010a73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001010b876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:27:03,253 - ai_website_generator - WARNING - Element not found: .logged-in - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001010c0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001010b8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000100c010c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000100c48618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000100c8999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000100c3c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x000000010108388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000101086ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000101064510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000101087360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000101055610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001010a7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001010a73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001010b876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:27:05,320 - ai_website_generator - WARNING - Element not found: .authenticated - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001010c0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001010b8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000100c010c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000100c48618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000100c8999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000100c3c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x000000010108388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000101086ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000101064510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000101087360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000101055610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001010a7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001010a73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001010b876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:27:07,393 - ai_website_generator - WARNING - Element not found: [data-authenticated='true'] - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001010c0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001010b8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000100c010c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000100c48618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000100c8999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000100c3c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x000000010108388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000101086ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000101064510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000101087360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000101055610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001010a7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001010a73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001010b876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:27:59,914 - ai_website_generator - ERROR - Tab cleanup failed: HTTPConnectionPool(host='localhost', port=54385): Max retries exceeded with url: /session/8b1c3a4c7fa26f0309b4313eddf92fcb/window/handles (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103ca3910>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-08-31 17:35:09,546 - ai_website_generator - INFO - Launched Brave with user profile (PID: 58176)
+2025-08-31 17:35:15,750 - ai_website_generator - INFO - Connected to Brave browser with user profile
+2025-08-31 17:36:02,090 - ai_website_generator - WARNING - Element not found: [data-testid*='user'] - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104ec8c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000104ec0b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000104a090c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000104a50618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000104a9199c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000104a44934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000104e8b88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000104e8eab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000104e6c510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000104e8f360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000104e5d610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000104eaf230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000104eaf3bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000104ec076c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:36:04,181 - ai_website_generator - WARNING - Element not found: [data-testid*='profile'] - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104ec8c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000104ec0b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000104a090c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000104a50618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000104a9199c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000104a44934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000104e8b88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000104e8eab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000104e6c510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000104e8f360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000104e5d610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000104eaf230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000104eaf3bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000104ec076c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:36:06,246 - ai_website_generator - WARNING - Element not found: .user-menu - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104ec8c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000104ec0b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000104a090c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000104a50618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000104a9199c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000104a44934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000104e8b88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000104e8eab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000104e6c510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000104e8f360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000104e5d610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000104eaf230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000104eaf3bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000104ec076c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:36:08,314 - ai_website_generator - WARNING - Element not found: .profile-menu - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104ec8c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000104ec0b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000104a090c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000104a50618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000104a9199c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000104a44934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000104e8b88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000104e8eab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000104e6c510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000104e8f360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000104e5d610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000104eaf230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000104eaf3bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000104ec076c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:36:10,373 - ai_website_generator - WARNING - Element not found: .user-avatar - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104ec8c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000104ec0b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000104a090c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000104a50618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000104a9199c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000104a44934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000104e8b88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000104e8eab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000104e6c510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000104e8f360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000104e5d610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000104eaf230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000104eaf3bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000104ec076c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:36:12,445 - ai_website_generator - WARNING - Element not found: button[aria-label*='user' i] - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104ec8c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000104ec0b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000104a090c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000104a50618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000104a9199c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000104a44934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000104e8b88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000104e8eab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000104e6c510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000104e8f360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000104e5d610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000104eaf230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000104eaf3bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000104ec076c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:36:14,516 - ai_website_generator - WARNING - Element not found: button[aria-label*='profile' i] - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104ec8c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000104ec0b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000104a090c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000104a50618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000104a9199c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000104a44934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000104e8b88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000104e8eab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000104e6c510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000104e8f360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000104e5d610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000104eaf230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000104eaf3bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000104ec076c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:36:16,586 - ai_website_generator - WARNING - Element not found: .logged-in - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104ec8c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000104ec0b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000104a090c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000104a50618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000104a9199c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000104a44934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000104e8b88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000104e8eab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000104e6c510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000104e8f360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000104e5d610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000104eaf230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000104eaf3bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000104ec076c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:36:18,656 - ai_website_generator - WARNING - Element not found: .authenticated - Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104ec8c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x0000000104ec0b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x0000000104a090c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000104a50618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x0000000104a9199c cxxbridge1$string$len + 649852
+5   chromedriver                        0x0000000104a44934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x0000000104e8b88c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x0000000104e8eab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000104e6c510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x0000000104e8f360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000104e5d610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x0000000104eaf230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x0000000104eaf3bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x0000000104ec076c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:36:20,414 - ai_website_generator - ERROR - Tab cleanup failed: HTTPConnectionPool(host='localhost', port=61359): Max retries exceeded with url: /session/f8e9e3e258d6b2f15b72900e9084eff4/window/handles (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b38220>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-08-31 17:52:07,367 - ai_website_generator - INFO - Launched Brave with user profile (PID: 61462)
+2025-08-31 17:52:13,035 - ai_website_generator - INFO - Connected to Brave browser with user profile
+2025-08-31 17:53:03,881 - ai_website_generator - INFO - Prompt enhancement completed via FlexOS
+2025-08-31 17:53:14,684 - ai_website_generator - WARNING - Element not found: [data-testid*='user'] - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034f0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001034e8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x00000001030310c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000103078618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001030b999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x000000010306c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x00000001034b388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x00000001034b6ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000103494510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x00000001034b7360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000103485610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001034d7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001034d73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001034e876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:53:16,744 - ai_website_generator - WARNING - Element not found: [data-testid*='profile'] - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034f0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001034e8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x00000001030310c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000103078618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001030b999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x000000010306c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x00000001034b388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x00000001034b6ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000103494510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x00000001034b7360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000103485610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001034d7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001034d73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001034e876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:53:18,808 - ai_website_generator - WARNING - Element not found: .user-menu - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034f0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001034e8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x00000001030310c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000103078618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001030b999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x000000010306c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x00000001034b388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x00000001034b6ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000103494510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x00000001034b7360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000103485610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001034d7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001034d73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001034e876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:53:20,872 - ai_website_generator - WARNING - Element not found: .profile-menu - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034f0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001034e8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x00000001030310c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000103078618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001030b999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x000000010306c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x00000001034b388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x00000001034b6ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000103494510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x00000001034b7360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000103485610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001034d7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001034d73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001034e876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:53:22,935 - ai_website_generator - WARNING - Element not found: .user-avatar - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034f0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001034e8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x00000001030310c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000103078618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001030b999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x000000010306c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x00000001034b388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x00000001034b6ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000103494510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x00000001034b7360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000103485610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001034d7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001034d73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001034e876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:53:24,994 - ai_website_generator - WARNING - Element not found: button[aria-label*='user' i] - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034f0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001034e8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x00000001030310c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000103078618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001030b999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x000000010306c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x00000001034b388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x00000001034b6ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000103494510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x00000001034b7360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000103485610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001034d7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001034d73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001034e876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:53:27,055 - ai_website_generator - WARNING - Element not found: button[aria-label*='profile' i] - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034f0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001034e8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x00000001030310c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000103078618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001030b999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x000000010306c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x00000001034b388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x00000001034b6ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000103494510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x00000001034b7360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000103485610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001034d7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001034d73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001034e876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:53:29,121 - ai_website_generator - WARNING - Element not found: .logged-in - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034f0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001034e8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x00000001030310c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000103078618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001030b999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x000000010306c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x00000001034b388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x00000001034b6ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000103494510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x00000001034b7360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000103485610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001034d7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001034d73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001034e876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:53:31,187 - ai_website_generator - WARNING - Element not found: .authenticated - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034f0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001034e8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x00000001030310c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000103078618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001030b999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x000000010306c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x00000001034b388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x00000001034b6ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000103494510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x00000001034b7360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000103485610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001034d7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001034d73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001034e876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:53:33,251 - ai_website_generator - WARNING - Element not found: [data-authenticated='true'] - Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034f0c20 cxxbridge1$str$ptr + 2747652
+1   chromedriver                        0x00000001034e8b20 cxxbridge1$str$ptr + 2714628
+2   chromedriver                        0x00000001030310c8 cxxbridge1$string$len + 90536
+3   chromedriver                        0x0000000103078618 cxxbridge1$string$len + 382712
+4   chromedriver                        0x00000001030b999c cxxbridge1$string$len + 649852
+5   chromedriver                        0x000000010306c934 cxxbridge1$string$len + 334356
+6   chromedriver                        0x00000001034b388c cxxbridge1$str$ptr + 2496880
+7   chromedriver                        0x00000001034b6ab8 cxxbridge1$str$ptr + 2509724
+8   chromedriver                        0x0000000103494510 cxxbridge1$str$ptr + 2369012
+9   chromedriver                        0x00000001034b7360 cxxbridge1$str$ptr + 2511940
+10  chromedriver                        0x0000000103485610 cxxbridge1$str$ptr + 2307828
+11  chromedriver                        0x00000001034d7230 cxxbridge1$str$ptr + 2642708
+12  chromedriver                        0x00000001034d73bc cxxbridge1$str$ptr + 2643104
+13  chromedriver                        0x00000001034e876c cxxbridge1$str$ptr + 2713680
+14  libsystem_pthread.dylib             0x00000001805abc0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001805a6b80 thread_start + 8
+
+2025-08-31 17:54:27,574 - ai_website_generator - INFO - Code generation completed successfully
+2025-08-31 17:54:27,581 - ai_website_generator - INFO - Project created successfully: /Users/aryankhunt/Desktop/AI_Generated_Front_Website_Construction_0831_1754
+2025-08-31 17:54:27,669 - ai_website_generator - INFO - Cleaned up automation tabs
+2025-08-31 19:43:07,059 - ai_website_generator - INFO - Launched Brave with user profile (PID: 69759)
+2025-08-31 19:43:14,655 - ai_website_generator - INFO - Connected to Brave browser with user profile
+2025-08-31 19:44:18,201 - ai_website_generator - INFO - Prompt enhancement completed via FlexOS
+2025-08-31 19:45:42,318 - ai_website_generator - ERROR - Tab cleanup failed: HTTPConnectionPool(host='localhost', port=63912): Max retries exceeded with url: /session/86c0ec1dcba4434fd1c9043c09100b1e/window/handles (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x103a178b0>: Failed to establish a new connection: [Errno 61] Connection refused'))

@@ -1,0 +1,19 @@
+{
+  "project_name": "PowerGym_Website_20250912_131316",
+  "created_at": "2025-09-12T13:13:16.737582",
+  "total_components": 2,
+  "created_files": [
+    "generated_projects/PowerGym_Website_20250912_131316/src/components/Header/Header.jsx",
+    "generated_projects/PowerGym_Website_20250912_131316/src/components/Hero/Hero.jsx"
+  ],
+  "components": {
+    "Header": {
+      "path": "src/components/Header/Header.jsx",
+      "size": 724
+    },
+    "Hero": {
+      "path": "src/components/Hero/Hero.jsx",
+      "size": 712
+    }
+  }
+}
