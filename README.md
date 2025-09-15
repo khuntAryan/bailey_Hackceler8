@@ -34,7 +34,7 @@ Multi-Agent Architecture - Specialized agents for parsing, building, validation
 
 Quick Start
 bash
-git clone https://github.com/yourusername/codecraft-ai.git
+git clone https://github.com/khuntaryan/bailey_Hackceler8.git
 cd codecraft-ai
 pip install -r requirements.txt
 python src/tools/phase2_complete_project_builder.py
