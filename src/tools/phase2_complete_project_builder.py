@@ -437,107 +437,107 @@ Visit [http://localhost:3000](http://localhost:3000)
 - `npm run preview` - Preview production build
 '''
 
-     if self.project_data['has_backend']:
-         readme_content += '''
+        if self.project_data['has_backend']:
+            readme_content += '''
 ## Backend
 
 - `npm run server` - Start backend server
 - `npm start` - Start both frontend and backend
 '''
 
-     readme_content += f'''
+        readme_content += f'''
 ## Generated Components
 
 {len(self.project_data['components'])} components were automatically created:
 
 '''
-     for component in self.project_data['components']:
-         readme_content += f"- `{component['file_path']}` - {component['name']}\n"
+        for component in self.project_data['components']:
+            readme_content += f"- `{component['file_path']}` - {component['name']}\n"
 
-     readme_path = project_dir / 'README.md'
-     with open(readme_path, 'w', encoding='utf-8') as f:
-         f.write(readme_content)
-     
-     print("✅ Generated: README.md")
-     return readme_path
- 
- def build_complete_project(self):
-     """Main method to build the complete project"""
-     try:
-         print("🚀 Starting Complete Project Builder...")
-         print("="*60)
-         
-         # Step 1: Find latest Perplexity file
-         latest_file = self.find_latest_perplexity_file()
-         
-         # Step 2: Read content
-         with open(latest_file, 'r', encoding='utf-8') as f:
-             content = f.read()
-         
-         # Step 3: Parse dependencies and API keys
-         print("\n📋 Parsing dependencies and configuration...")
-         self.parse_dependencies_section(content)
-         
-         # Step 4: Extract code components
-         print("\n🔧 Extracting code components...")
-         self.extract_code_components(content)
-         
-         if not self.project_data['components']:
-             raise RuntimeError("No code components found! Check your text file format.")
-         
-         # Step 5: Create project directory
-         project_dir = Path.home() / 'Desktop' / 'LLM_Generated_Project'
-         if project_dir.exists():
-             print(f"\n🗑️  Removing existing project directory...")
-             import shutil
-             shutil.rmtree(project_dir)
-         
-         project_dir.mkdir(parents=True, exist_ok=True)
-         print(f"\n📁 Created project directory: {project_dir}")
-         
-         # Step 6: Generate all configuration files
-         print("\n⚙️  Generating configuration files...")
-         self.generate_package_json(project_dir)
-         self.generate_vite_config(project_dir)
-         self.generate_tailwind_config(project_dir)
-         self.generate_postcss_config(project_dir)
-         self.generate_index_html(project_dir)
-         self.generate_main_jsx(project_dir)
-         self.generate_index_css(project_dir)
-         self.generate_env_file(project_dir)
-         
-         # Step 7: Create all component files
-         print("\n📝 Creating component files...")
-         created_files = self.create_component_files(project_dir)
-         
-         # Step 8: Generate README
-         self.generate_readme(project_dir)
-         
-         # Success summary
-         print("\n" + "="*60)
-         print("🎉 PROJECT BUILD COMPLETE!")
-         print("="*60)
-         print(f"📂 Project Location: {project_dir}")
-         print(f"📦 Dependencies: {len(self.project_data['dependencies'])} + {len(self.project_data['dev_dependencies'])} dev")
-         print(f"🔧 Components: {len(self.project_data['components'])}")
-         print(f"🔑 API Keys: {len(self.project_data['api_keys'])}")
-         
-         print(f"\n⚡ Next Steps:")
-         print(f"1. cd {project_dir}")
-         print(f"2. npm install")
-         print(f"3. npm run dev")
-         print(f"4. Open http://localhost:3000")
-         
-         if self.project_data['api_keys']:
-             print(f"5. Copy .env.example to .env and add your API keys")
-         
-         print("\n🚀 Your project is ready to run!")
-         
-     except Exception as e:
-         print(f"\n❌ Error: {e}")
-         raise
+        readme_path = project_dir / 'README.md'
+        with open(readme_path, 'w', encoding='utf-8') as f:
+            f.write(readme_content)
+        
+        print("✅ Generated: README.md")
+        return readme_path
+    
+    def build_complete_project(self):
+        """Main method to build the complete project"""
+        try:
+            print("🚀 Starting Complete Project Builder...")
+            print("="*60)
+            
+            # Step 1: Find latest Perplexity file
+            latest_file = self.find_latest_perplexity_file()
+            
+            # Step 2: Read content
+            with open(latest_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Step 3: Parse dependencies and API keys
+            print("\n📋 Parsing dependencies and configuration...")
+            self.parse_dependencies_section(content)
+            
+            # Step 4: Extract code components
+            print("\n🔧 Extracting code components...")
+            self.extract_code_components(content)
+            
+            if not self.project_data['components']:
+                raise RuntimeError("No code components found! Check your text file format.")
+            
+            # Step 5: Create project directory
+            project_dir = Path.home() / 'Desktop' / 'LLM_Generated_Project'
+            if project_dir.exists():
+                print(f"\n🗑️  Removing existing project directory...")
+                import shutil
+                shutil.rmtree(project_dir)
+            
+            project_dir.mkdir(parents=True, exist_ok=True)
+            print(f"\n📁 Created project directory: {project_dir}")
+            
+            # Step 6: Generate all configuration files
+            print("\n⚙️  Generating configuration files...")
+            self.generate_package_json(project_dir)
+            self.generate_vite_config(project_dir)
+            self.generate_tailwind_config(project_dir)
+            self.generate_postcss_config(project_dir)
+            self.generate_index_html(project_dir)
+            self.generate_main_jsx(project_dir)
+            self.generate_index_css(project_dir)
+            self.generate_env_file(project_dir)
+            
+            # Step 7: Create all component files
+            print("\n📝 Creating component files...")
+            created_files = self.create_component_files(project_dir)
+            
+            # Step 8: Generate README
+            self.generate_readme(project_dir)
+            
+            # Success summary
+            print("\n" + "="*60)
+            print("🎉 PROJECT BUILD COMPLETE!")
+            print("="*60)
+            print(f"📂 Project Location: {project_dir}")
+            print(f"📦 Dependencies: {len(self.project_data['dependencies'])} + {len(self.project_data['dev_dependencies'])} dev")
+            print(f"🔧 Components: {len(self.project_data['components'])}")
+            print(f"🔑 API Keys: {len(self.project_data['api_keys'])}")
+            
+            print(f"\n⚡ Next Steps:")
+            print(f"1. cd {project_dir}")
+            print(f"2. npm install")
+            print(f"3. npm run dev")
+            print(f"4. Open http://localhost:3000")
+            
+            if self.project_data['api_keys']:
+                print(f"5. Copy .env.example to .env and add your API keys")
+            
+            print("\n🚀 Your project is ready to run!")
+            
+        except Exception as e:
+            print(f"\n❌ Error: {e}")
+            raise
 
 # Main execution
 if __name__ == "__main__":
- builder = CompleteProjectBuilder()
- builder.build_complete_project()
+    builder = CompleteProjectBuilder()
+    builder.build_complete_project()
