@@ -1,288 +1,543 @@
 import os
 import re
 import json
+from pathlib import Path
 from datetime import datetime
-from typing import Dict, List, Optional
 
 class CompleteProjectBuilder:
-    def __init__(self, base_path: str = "generated_projects"):
-        self.base_path = base_path
-        self.current_project_path = None
+    def __init__(self):
+        self.project_data = {
+            'dependencies': {},
+            'dev_dependencies': {},
+            'api_keys': [],
+            'components': [],
+            'has_backend': False,
+            'has_frontend': True,
+            'framework': 'react',
+            'build_tool': 'vite',
+            'css_framework': 'tailwindcss'
+        }
         
-    def _extract_code_blocks_from_response(self, response: str) -> Dict[str, Dict]:
-        """FIXED: Extract code blocks from LLM response with correct regex patterns"""
-        components = {}
-        print(f"🔍 Parsing response length: {len(response)} characters")
-     ##jjdjjd djdjd
-
-
-
-
-        patterns = [
-            r'//\s*Component:\s*([^/\n]+)\s*//\s*File:\s*([^\n]+)\s*\n(.*?)(?=//\s*Component:|$)',
-            r'//\s*([^/\n]+)\s*\|\s*([^\n]+)\s*\n(.*?)(?=//\s*[^/\n]+\s*\||$)',
-            r'``````',
-
+    def find_latest_perplexity_file(self):
+        """Find the most recent Perplexity response file"""
+        perplexity_dir = Path.home() / 'Desktop' / 'Perplexity_Responses'
+        
+        if not perplexity_dir.exists():
+            raise FileNotFoundError(f"Directory not found: {perplexity_dir}")
+        
+        response_files = list(perplexity_dir.glob('perplexity_response_*.txt'))
+        if not response_files:
+            raise FileNotFoundError("No perplexity_response_*.txt files found!")
+        
+        latest_file = max(response_files, key=lambda f: f.stat().st_mtime)
+        print(f"📁 Using LLM output: {latest_file}")
+        return latest_file
+    
+    def parse_dependencies_section(self, content):
+        """Parse dependencies and API keys from the top of the file"""
+        lines = content.split('\n')
+        
+        # Look for dependency installation commands
+        dependency_patterns = [
+            r'npm\s+i(?:nstall)?\s+(.*)',
+            r'npm\s+i(?:nstall)?\s+-D\s+(.*)',  # dev dependencies
+            r'npm\s+install\s+(.*)'
         ]
         
-        for i, pattern in enumerate(patterns):
-            matches = re.findall(pattern, response, re.DOTALL | re.IGNORECASE)
-            print(f"📊 Pattern {i+1} found {len(matches)} matches")
+        for line in lines[:50]:  # Check first 50 lines
+            line = line.strip()
             
-            if matches:
-                for match in matches:
-                    if len(match) == 3:  
-                        component_name = match[0].strip()
-                        file_path = match[1].strip()
-                        code = match[2].strip()
-                        
-                        if len(code) > 100:  
-                            components[component_name] = {
-                                'name': component_name,
-                                'path': file_path,
-                                'code': code
-                            }
-                            print(f"✅ Extracted {component_name}: {len(code)} chars")
-                    elif len(match) == 1:  
-                        code = match.strip()
-                        if len(code) > 100:
-
-                            name_match = re.search(r'function\s+(\w+)|const\s+(\w+)\s*=', code)
-                            if name_match:
-                                comp_name = name_match.group(1) or name_match.group(2)
-                                components[comp_name] = {
-                                    'name': comp_name,
-                                    'path': f'src/components/{comp_name}/{comp_name}.jsx',
-                                    'code': code
-                                }
-                                print(f"✅ Extracted {comp_name}: {len(code)} chars")
-        
-
-        if not components:
-            print("🔄 Using fallback line-by-line parsing...")
-            lines = response.split('\n')
-            current_component = None
-            current_code = []
-            
-            for line in lines:
-                if '// Component:' in line and '// File:' in line:
-
-                    if current_component and current_code:
-                        code_str = '\n'.join(current_code).strip()
-                        if len(code_str) > 100:
-                            components[current_component['name']] = {
-                                'name': current_component['name'],
-                                'path': current_component['path'], 
-                                'code': code_str
-                            }
-                            print(f"✅ Fallback extracted {current_component['name']}: {len(code_str)} chars")
+            # Parse npm install commands
+            for pattern in dependency_patterns:
+                match = re.search(pattern, line, re.IGNORECASE)
+                if match:
+                    packages = match.group(1).strip()
+                    # Split packages and clean them
+                    pkg_list = [pkg.strip() for pkg in packages.split() if pkg.strip()]
                     
-
-                    parts = line.split('//')
-                    if len(parts) >= 3:
-                        comp_name = parts[1].replace('Component:', '').strip()
-                        file_path = parts[2].replace('File:', '').strip()
-                        current_component = {'name': comp_name, 'path': file_path}
-                        current_code = []
-                elif current_component:
-                    current_code.append(line)
-            
-
-            if current_component and current_code:
-                code_str = '\n'.join(current_code).strip()
-                if len(code_str) > 100:
-                    components[current_component['name']] = {
-                        'name': current_component['name'],
-                        'path': current_component['path'],
-                        'code': code_str
-                    }
-                    print(f"✅ Final fallback extracted {current_component['name']}: {len(code_str)} chars")
+                    if '-D' in line or 'dev' in line.lower():
+                        for pkg in pkg_list:
+                            self.project_data['dev_dependencies'][pkg] = 'latest'
+                    else:
+                        for pkg in pkg_list:
+                            self.project_data['dependencies'][pkg] = 'latest'
         
-        print(f"🎯 Total extracted components: {len(components)}")
+        # Parse API keys section
+        api_section = False
+        for line in lines[:100]:  # Check first 100 lines
+            if 'API Keys' in line or '.env' in line:
+                api_section = True
+                continue
+            if api_section and line.strip().startswith(('MONGODB', 'JWT', 'CLOUDINARY', 'STRIPE', 'EMAIL', 'PORT')):
+                key_name = line.split('=')[0].strip()
+                self.project_data['api_keys'].append(key_name)
+            if api_section and (line.strip() == '' or line.startswith('#')):
+                continue
+            if api_section and not line.strip().isupper() and '=' not in line:
+                break
+        
+        # Detect project characteristics
+        deps_str = str(self.project_data['dependencies']) + str(self.project_data['dev_dependencies'])
+        
+        if 'express' in deps_str or 'mongoose' in deps_str:
+            self.project_data['has_backend'] = True
+        if 'next' in deps_str:
+            self.project_data['framework'] = 'nextjs'
+            self.project_data['build_tool'] = 'next'
+        if 'vite' in deps_str:
+            self.project_data['build_tool'] = 'vite'
+        if 'tailwind' in deps_str:
+            self.project_data['css_framework'] = 'tailwindcss'
+            
+        print(f"✅ Detected: {len(self.project_data['dependencies'])} dependencies")
+        print(f"✅ Detected: {len(self.project_data['dev_dependencies'])} dev dependencies")
+        print(f"✅ Detected: {len(self.project_data['api_keys'])} API keys")
+    
+    def extract_code_components(self, content):
+        """Extract all code components from the content"""
+        lines = content.split('\n')
+        components = []
+        
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
+            if line.startswith('// Component:'):
+                component_name = line.replace('// Component:', '').strip()
+                
+                # Next line should be // File:
+                if i + 1 < len(lines) and lines[i + 1].strip().startswith('// File:'):
+                    file_path = lines[i + 1].strip().replace('// File:', '').strip()
+                    
+                    # Collect code until next // Component: or end
+                    code_lines = []
+                    j = i + 2
+                    while j < len(lines):
+                        if lines[j].strip().startswith('// Component:'):
+                            break
+                        code_lines.append(lines[j].rstrip())
+                        j += 1
+                    
+                    # Join and clean code
+                    code = '\n'.join(code_lines).strip()
+                    
+                    # Remove language markers
+                    for lang in ['jsx', 'javascript', 'js', 'typescript', 'ts', 'tsx', 'bash', 'json']:
+                        if code.startswith(f'{lang}\n'):
+                            code = code[len(lang)+1:]
+                            break
+                    
+                    # Remove markdown code fences
+                    if code.startswith('```'):
+                        code = '\n'.join(code.split('\n')[1:])
+                    if code.endswith('```'):
+                        code = '\n'.join(code.split('\n')[:-1])
+                    
+                    code = code.strip()
+                    
+                    # Only include substantial code
+                    if len(code) > 50:
+                        components.append({
+                            'name': component_name,
+                            'file_path': file_path,
+                            'code': code
+                        })
+                    
+                    i = j - 1
+            i += 1
+        
+        self.project_data['components'] = components
+        print(f"✅ Extracted: {len(components)} code components")
         return components
     
-    def create_component_file(self, project_path: str, component_info: Dict) -> Optional[str]:
-        """FIXED: Create component file with proper error handling"""
-        try:
-            component_name = component_info['name']
-            file_path = component_info['path'] 
-            code = component_info['code']
-            
-
-            if file_path.startswith('./'):
-                file_path = file_path[2:]
-            if file_path.startswith('src/'):
-                file_path = file_path[4:]
-                
-
-            full_path = os.path.join(project_path, 'src', file_path)
-            
-
-            os.makedirs(os.path.dirname(full_path), exist_ok=True)
-            
-
-            clean_code = code
-            if clean_code.startswith('```'):
-                clean_code = '\n'.join(clean_code.split('\n')[1:-1])
-            
-
-            if 'import React' not in clean_code and ('function ' in clean_code or 'const ' in clean_code):
-                clean_code = "import React from 'react';\n" + clean_code
-            
-
-            with open(full_path, 'w', encoding='utf-8') as f:
-                f.write(clean_code)
-                
-            print(f"✅ Created: {full_path} ({len(clean_code)} characters)")
-            return full_path
-            
-        except Exception as e:
-            print(f"❌ Error creating {component_info.get('name', 'unknown')}: {e}")
-            return None
-    
-    def create_project_structure(self, project_name: str) -> str:
-        """Create basic project structure"""
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        project_path = os.path.join(self.base_path, f"{project_name}_{timestamp}")
+    def generate_package_json(self, project_dir):
+        """Generate package.json with all detected dependencies"""
+        # Ensure we have minimum required dependencies
+        if not self.project_data['dependencies']:
+            self.project_data['dependencies'] = {
+                'react': '^18.2.0',
+                'react-dom': '^18.2.0'
+            }
         
-
-        directories = [
-            'src/components',
-            'src/pages',
-            'src/hooks',
-            'src/utils',
-            'src/styles',
-            'public'
-        ]
+        if not self.project_data['dev_dependencies']:
+            self.project_data['dev_dependencies'] = {
+                '@vitejs/plugin-react': '^4.0.0',
+                'vite': '^4.4.0'
+            }
         
-        for directory in directories:
-            os.makedirs(os.path.join(project_path, directory), exist_ok=True)
+        # Add Tailwind if detected
+        if self.project_data['css_framework'] == 'tailwindcss':
+            self.project_data['dev_dependencies'].update({
+                'tailwindcss': '^3.3.0',
+                'postcss': '^8.4.24',
+                'autoprefixer': '^10.4.14'
+            })
         
-
         package_json = {
-            "name": project_name.lower().replace(' ', '-'),
-            "version": "1.0.0",
-            "main": "server.js",
+            "name": "llm-generated-project",
+            "private": True,
+            "version": "0.0.0",
+            "type": "module",
             "scripts": {
-                "test": "echo \"Error: no test specified\" && exit 1",
-                "start": "node server.js"
+                "dev": "vite",
+                "build": "vite build",
+                "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
+                "preview": "vite preview"
             },
-            "keywords": [],
-            "author": "",
-            "license": "ISC",
-            "dependencies": {},
-            "devDependencies": {}
+            "dependencies": self.project_data['dependencies'],
+            "devDependencies": self.project_data['dev_dependencies']
         }
         
-        with open(os.path.join(project_path, 'package.json'), 'w') as f:
+        # Add backend scripts if backend detected
+        if self.project_data['has_backend']:
+            package_json["scripts"]["server"] = "node server.js"
+            package_json["scripts"]["start"] = "npm run server"
+        
+        package_json_path = project_dir / 'package.json'
+        with open(package_json_path, 'w', encoding='utf-8') as f:
             json.dump(package_json, f, indent=2)
         
-        self.current_project_path = project_path
-        return project_path
+        print("✅ Generated: package.json")
+        return package_json_path
     
-    def build_complete_project(self, llm_response: str, project_name: str = "LLM_Generated_Project") -> str:
-        """MAIN METHOD: Build complete project from LLM response"""
-        try:
-            print(f"🚀 Starting project build: {project_name}")
-            
+    def generate_vite_config(self, project_dir):
+        """Generate vite.config.js"""
+        vite_config = '''import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-            project_path = self.create_project_structure(project_name)
-            print(f"📁 Created project structure at: {project_path}")
-            
-
-            components = self._extract_code_blocks_from_response(llm_response)
-            
-            if not components:
-                print("❌ No components found in response!")
-                return project_path
-            
-
-            created_files = []
-            for component_name, component_info in components.items():
-                file_path = self.create_component_file(project_path, component_info)
-                if file_path:
-                    created_files.append(file_path)
-            
-            print(f"✅ Successfully created {len(created_files)} component files!")
-            print("📝 Created files:")
-            for file_path in created_files:
-                print(f"   → {file_path}")
-            
-
-            self._create_project_summary(project_path, components, created_files)
-            
-            return project_path
-            
-        except Exception as e:
-            print(f"❌ Error building project: {e}")
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 3000,
+    open: true
+  }
+})
+'''
+        vite_config_path = project_dir / 'vite.config.js'
+        with open(vite_config_path, 'w', encoding='utf-8') as f:
+            f.write(vite_config)
+        
+        print("✅ Generated: vite.config.js")
+        return vite_config_path
+    
+    def generate_tailwind_config(self, project_dir):
+        """Generate tailwind.config.js if Tailwind is used"""
+        if self.project_data['css_framework'] != 'tailwindcss':
             return None
+            
+        tailwind_config = '''/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+'''
+        tailwind_config_path = project_dir / 'tailwind.config.js'
+        with open(tailwind_config_path, 'w', encoding='utf-8') as f:
+            f.write(tailwind_config)
+        
+        print("✅ Generated: tailwind.config.js")
+        return tailwind_config_path
     
-    def _create_project_summary(self, project_path: str, components: Dict, created_files: List[str]):
-        """Create a summary file for the project"""
-        summary = {
-            "project_name": os.path.basename(project_path),
-            "created_at": datetime.now().isoformat(),
-            "total_components": len(components),
-            "created_files": created_files,
-            "components": {
-                name: {
-                    "path": info["path"],
-                    "size": len(info["code"])
-                } for name, info in components.items()
-            }
-        }
+    def generate_postcss_config(self, project_dir):
+        """Generate postcss.config.js if Tailwind is used"""
+        if self.project_data['css_framework'] != 'tailwindcss':
+            return None
+            
+        postcss_config = '''export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+'''
+        postcss_config_path = project_dir / 'postcss.config.js'
+        with open(postcss_config_path, 'w', encoding='utf-8') as f:
+            f.write(postcss_config)
         
-        with open(os.path.join(project_path, 'project_summary.json'), 'w') as f:
-            json.dump(summary, f, indent=2)
+        print("✅ Generated: postcss.config.js")
+        return postcss_config_path
+    
+    def generate_index_html(self, project_dir):
+        """Generate index.html"""
+        index_html = '''<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLM Generated Project</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+'''
+        index_html_path = project_dir / 'index.html'
+        with open(index_html_path, 'w', encoding='utf-8') as f:
+            f.write(index_html)
         
-        print(f"📊 Created project summary at: {os.path.join(project_path, 'project_summary.json')}")
+        print("✅ Generated: index.html")
+        return index_html_path
+    
+    def generate_main_jsx(self, project_dir):
+        """Generate src/main.jsx"""
+        src_dir = project_dir / 'src'
+        src_dir.mkdir(exist_ok=True)
+        
+        main_jsx = '''import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
 
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
+'''
+        main_jsx_path = src_dir / 'main.jsx'
+        with open(main_jsx_path, 'w', encoding='utf-8') as f:
+            f.write(main_jsx)
+        
+        print("✅ Generated: src/main.jsx")
+        return main_jsx_path
+    
+    def generate_index_css(self, project_dir):
+        """Generate src/index.css"""
+        src_dir = project_dir / 'src'
+        src_dir.mkdir(exist_ok=True)
+        
+        if self.project_data['css_framework'] == 'tailwindcss':
+            index_css = '''@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+'''
+        else:
+            index_css = '''body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+'''
+        
+        index_css_path = src_dir / 'index.css'
+        with open(index_css_path, 'w', encoding='utf-8') as f:
+            f.write(index_css)
+        
+        print("✅ Generated: src/index.css")
+        return index_css_path
+    
+    def generate_env_file(self, project_dir):
+        """Generate .env.example with detected API keys"""
+        if not self.project_data['api_keys']:
+            return None
+        
+        env_content = "# Environment Variables\n"
+        env_content += "# Copy this file to .env and fill in your actual values\n\n"
+        
+        for key in self.project_data['api_keys']:
+            env_content += f"{key}=your_{key.lower()}_here\n"
+        
+        env_path = project_dir / '.env.example'
+        with open(env_path, 'w', encoding='utf-8') as f:
+            f.write(env_content)
+        
+        print(f"✅ Generated: .env.example with {len(self.project_data['api_keys'])} API keys")
+        return env_path
+    
+    def create_component_files(self, project_dir):
+        """Create all component files in their proper directories"""
+        created_files = []
+        
+        for component in self.project_data['components']:
+            file_path = project_dir / component['file_path'].lstrip('/')
+            
+            # Create parent directories
+            file_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            # Write the component code
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(component['code'])
+            
+            created_files.append(file_path)
+            print(f"✅ Created: {component['file_path']}")
+        
+        return created_files
+    
+    def generate_readme(self, project_dir):
+        """Generate README.md with setup instructions"""
+        readme_content = f'''# LLM Generated Project
+
+This project was automatically generated from an LLM response on {datetime.now().strftime('%Y-%m-%d')}.
+
+## Setup Instructions
+
+1. **Install dependencies:**
+npm install
+
+2. **Set up environment variables (if needed):**
+cp .env.example .env  
+
+3. **Run the development server:**
+npm run dev
+
+4. **Open your browser:**
+Visit [http://localhost:3000](http://localhost:3000)
+
+## Project Structure
+
+- `src/components/` - React components
+- `src/pages/` - Page components
+- `src/` - Main application files
+- `public/` - Static assets
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+'''
+
+     if self.project_data['has_backend']:
+         readme_content += '''
+## Backend
+
+- `npm run server` - Start backend server
+- `npm start` - Start both frontend and backend
+'''
+
+     readme_content += f'''
+## Generated Components
+
+{len(self.project_data['components'])} components were automatically created:
+
+'''
+     for component in self.project_data['components']:
+         readme_content += f"- `{component['file_path']}` - {component['name']}\n"
+
+     readme_path = project_dir / 'README.md'
+     with open(readme_path, 'w', encoding='utf-8') as f:
+         f.write(readme_content)
+     
+     print("✅ Generated: README.md")
+     return readme_path
+ 
+ def build_complete_project(self):
+     """Main method to build the complete project"""
+     try:
+         print("🚀 Starting Complete Project Builder...")
+         print("="*60)
+         
+         # Step 1: Find latest Perplexity file
+         latest_file = self.find_latest_perplexity_file()
+         
+         # Step 2: Read content
+         with open(latest_file, 'r', encoding='utf-8') as f:
+             content = f.read()
+         
+         # Step 3: Parse dependencies and API keys
+         print("\n📋 Parsing dependencies and configuration...")
+         self.parse_dependencies_section(content)
+         
+         # Step 4: Extract code components
+         print("\n🔧 Extracting code components...")
+         self.extract_code_components(content)
+         
+         if not self.project_data['components']:
+             raise RuntimeError("No code components found! Check your text file format.")
+         
+         # Step 5: Create project directory
+         project_dir = Path.home() / 'Desktop' / 'LLM_Generated_Project'
+         if project_dir.exists():
+             print(f"\n🗑️  Removing existing project directory...")
+             import shutil
+             shutil.rmtree(project_dir)
+         
+         project_dir.mkdir(parents=True, exist_ok=True)
+         print(f"\n📁 Created project directory: {project_dir}")
+         
+         # Step 6: Generate all configuration files
+         print("\n⚙️  Generating configuration files...")
+         self.generate_package_json(project_dir)
+         self.generate_vite_config(project_dir)
+         self.generate_tailwind_config(project_dir)
+         self.generate_postcss_config(project_dir)
+         self.generate_index_html(project_dir)
+         self.generate_main_jsx(project_dir)
+         self.generate_index_css(project_dir)
+         self.generate_env_file(project_dir)
+         
+         # Step 7: Create all component files
+         print("\n📝 Creating component files...")
+         created_files = self.create_component_files(project_dir)
+         
+         # Step 8: Generate README
+         self.generate_readme(project_dir)
+         
+         # Success summary
+         print("\n" + "="*60)
+         print("🎉 PROJECT BUILD COMPLETE!")
+         print("="*60)
+         print(f"📂 Project Location: {project_dir}")
+         print(f"📦 Dependencies: {len(self.project_data['dependencies'])} + {len(self.project_data['dev_dependencies'])} dev")
+         print(f"🔧 Components: {len(self.project_data['components'])}")
+         print(f"🔑 API Keys: {len(self.project_data['api_keys'])}")
+         
+         print(f"\n⚡ Next Steps:")
+         print(f"1. cd {project_dir}")
+         print(f"2. npm install")
+         print(f"3. npm run dev")
+         print(f"4. Open http://localhost:3000")
+         
+         if self.project_data['api_keys']:
+             print(f"5. Copy .env.example to .env and add your API keys")
+         
+         print("\n🚀 Your project is ready to run!")
+         
+     except Exception as e:
+         print(f"\n❌ Error: {e}")
+         raise
+
+# Main execution
 if __name__ == "__main__":
-
-    builder = CompleteProjectBuilder()
-    
-
-    sample_response = """
-// Component: Header
-// File: src/components/Header/Header.jsx
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-
-export default function Header() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    return (
-        <header className="bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-900 text-white shadow-md sticky top-0 z-50">
-            <div className="container mx-auto flex justify-between items-center p-5">
-                <div className="text-3xl font-extrabold tracking-tight cursor-pointer select-none">
-                    <NavLink to="/" className="hover:text-pink-400">PowerGym</NavLink>
-                </div>
-                {/* Navigation and mobile menu code */}
-            </div>
-        </header>
-    );
-}
-
-// Component: Hero
-// File: src/components/Hero/Hero.jsx
-import React from 'react';
-
-export default function Hero() {
-    return (
-        <section className="relative bg-gradient-to-br from-pink-700 to-indigo-900 text-white py-28 px-6">
-            <div className="max-w-lg space-y-6">
-                <h1 className="text-5xl font-extrabold drop-shadow-lg tracking-tight leading-tight">
-                    Elevate Your <span className="text-pink-400">Fitness</span> Journey
-                </h1>
-                <p className="text-lg font-light tracking-wide max-w-md drop-shadow-md">
-                    Join PowerGym and get access to elite trainers, world-class equipment, and personalized plans.
-                </p>
-            </div>
-        </section>
-    );
-}
-    """
-    
-
-    project_path = builder.build_complete_project(sample_response, "PowerGym_Website")
-    print(f"🎉 Project built successfully at: {project_path}")
+ builder = CompleteProjectBuilder()
+ builder.build_complete_project()
